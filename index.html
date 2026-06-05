@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<title>DINAAA ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    padding:20px;
+    font-family:'Poppins',sans-serif;
+    background:
+    radial-gradient(circle at top left,#ff9dc0,#ff6f9f 35%,#ff3d71 100%);
+}
+
+/* Glow Background */
+body::before{
+    content:"";
+    position:absolute;
+    width:700px;
+    height:700px;
+    background:rgba(255,255,255,.15);
+    border-radius:50%;
+    filter:blur(120px);
+    animation:float 8s ease-in-out infinite;
+}
+
+.container{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    width:100%;
+    max-width:900px;
+}
+
+/* DINAAA */
+.name{
+    font-family:'Caveat',cursive;
+    font-size:clamp(4rem,12vw,11rem);
+    color:white;
+    letter-spacing:8px;
+    text-shadow:
+        0 0 15px rgba(255,255,255,.7),
+        0 0 35px rgba(255,255,255,.4),
+        0 15px 40px rgba(0,0,0,.25);
+}
+
+.name span{
+    display:inline-block;
+    opacity:0;
+    transform:translateY(100px) rotate(-15deg) scale(.3);
+    animation:showLetter .8s forwards;
+}
+
+.name span:nth-child(1){animation-delay:.2s;}
+.name span:nth-child(2){animation-delay:.5s;}
+.name span:nth-child(3){animation-delay:.8s;}
+.name span:nth-child(4){animation-delay:1.1s;}
+.name span:nth-child(5){animation-delay:1.4s;}
+.name span:nth-child(6){animation-delay:1.7s;}
+
+.heart{
+    animation:
+    showHeart .8s forwards 2.2s,
+    pulse 1.4s infinite 3s !important;
+}
+
+/* Subtitle */
+.subtitle{
+    margin-top:15px;
+    font-size:clamp(1rem,4vw,2rem);
+    font-weight:300;
+    color:white;
+    letter-spacing:4px;
+    opacity:0;
+    animation:fadeText 1.5s forwards 2.8s;
+}
+
+/* Button */
+.about-btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 42px;
+    border-radius:50px;
+    text-decoration:none;
+    color:white;
+    font-weight:600;
+    font-size:1.1rem;
+
+    background:rgba(255,255,255,.15);
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.15),
+        inset 0 0 15px rgba(255,255,255,.15);
+
+    opacity:0;
+    animation:fadeButton 1s forwards 3.8s;
+    transition:.35s;
+}
+
+.about-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:rgba(255,255,255,.25);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.2),
+        0 0 30px rgba(255,255,255,.3);
+}
+
+/* Music Button */
+.music-btn{
+    margin-top:20px;
+    padding:12px 28px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff4f87;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.music-btn:hover{
+    transform:scale(1.05);
+}
+
+/* Floating Hearts */
+.hearts{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    z-index:1;
+}
+
+.hearts span{
+    position:absolute;
+    bottom:-100px;
+    color:rgba(255,255,255,.45);
+    animation:rise linear infinite;
+}
+
+.hearts span:nth-child(1){
+    left:10%;
+    font-size:30px;
+    animation-duration:8s;
+}
+.hearts span:nth-child(2){
+    left:25%;
+    font-size:20px;
+    animation-duration:10s;
+}
+.hearts span:nth-child(3){
+    left:45%;
+    font-size:35px;
+    animation-duration:7s;
+}
+.hearts span:nth-child(4){
+    left:65%;
+    font-size:22px;
+    animation-duration:9s;
+}
+.hearts span:nth-child(5){
+    left:85%;
+    font-size:28px;
+    animation-duration:11s;
+}
+
+@keyframes showLetter{
+    0%{
+        opacity:0;
+        transform:translateY(100px) rotate(-15deg) scale(.3);
+    }
+    70%{
+        transform:translateY(-10px) rotate(5deg) scale(1.15);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0) rotate(0) scale(1);
+    }
+}
+
+@keyframes showHeart{
+    from{
+        opacity:0;
+        transform:scale(0);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+@keyframes fadeText{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeButton{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes rise{
+    from{
+        transform:translateY(0);
+        opacity:.6;
+    }
+    to{
+        transform:translateY(-120vh);
+        opacity:0;
+    }
+}
+
+@keyframes float{
+    0%,100%{
+        transform:translate(0,0);
+    }
+    50%{
+        transform:translate(80px,-50px);
+    }
+}
+
+@media(max-width:768px){
+
+    .name{
+        font-size:clamp(3.5rem,15vw,6rem);
+        letter-spacing:3px;
+    }
+
+    .subtitle{
+        font-size:1.1rem;
+        letter-spacing:2px;
+    }
+
+    .about-btn{
+        padding:14px 30px;
+        font-size:1rem;
+    }
+
+    body::before{
+        width:350px;
+        height:350px;
+    }
+}
+
+@media(max-width:480px){
+
+    .name{
+        font-size:3.2rem;
+        letter-spacing:2px;
+    }
+
+    .subtitle{
+        font-size:.95rem;
+    }
+
+    .about-btn{
+        width:90%;
+        max-width:280px;
+        display:block;
+        margin:30px auto 0;
+    }
+
+    .music-btn{
+        width:90%;
+        max-width:280px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="bgMusic" loop>
+    <source src="images/Instrumen Sampai Kau Bisa - Pss Sleman.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts">
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+    <span>❤</span>
+</div>
+
+<div class="container">
+
+    <h1 class="name">
+        <span>D</span>
+        <span>I</span>
+        <span>N</span>
+        <span>A</span>
+        <span>A</span>
+        <span>A</span>
+        <span class="heart">❤️</span>
+    </h1>
+
+    <div class="subtitle">
+        just for you ✨
+    </div>
+
+    <a href="about.html" class="about-btn">
+        💕 About Us
+    </a>
+
+    <br>
+
+
+</div>
+
+<script>
+function playMusic(){
+    document.getElementById("bgMusic").play();
+}
+</script>
+
+</body>
+</html>
