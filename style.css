@@ -1,0 +1,54 @@
+.subtitle{
+    margin-top:20px;
+    font-size:2rem;
+    color:white;
+    opacity:0;
+    letter-spacing:4px;
+    animation:fadeText 1.5s forwards 2.8s;
+}
+
+.about-btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:16px 42px;
+    text-decoration:none;
+    color:white;
+    font-size:1.2rem;
+    font-weight:600;
+    border-radius:50px;
+
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.3);
+
+    box-shadow:
+        0 8px 30px rgba(0,0,0,.15),
+        inset 0 0 15px rgba(255,255,255,.15);
+
+    opacity:0;
+    transform:translateY(20px);
+
+    animation:fadeButton 1s forwards 3.8s;
+    transition:.35s ease;
+}
+
+.about-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    background:rgba(255,255,255,.28);
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.2),
+        0 0 25px rgba(255,255,255,.25);
+}
+
+@keyframes fadeButton{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
